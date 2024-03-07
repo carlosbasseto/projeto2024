@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form id="cadastroForm">
+            <h1>Cadastro de Usuário</h1>
+            <div class="inputbox">
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" id="username" required>
+                <label for="username">Nome de usuário</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="password" required>
+                <label for="password">Senha</label>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <script src="assets/js/cadastro.js"></script>
+</body>
+</html>

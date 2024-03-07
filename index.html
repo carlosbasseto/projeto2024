@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form id="loginForm">
+            <h1>Início</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outiline"></ion-icon>
+                <input type="email" id="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="password" required>
+                <label for="">Senha</label>
+            </div>
+            <div class="forget">
+                <label for=""><input type="checkbox">Lembrar</label>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+            <button type="submit">Iniciar</button>
+            <div class="register">
+                <p>Não tenho uma conta <a href="cadastro.html">Criar conta</a></p>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        // Função para lidar com o envio do formulário
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obter os valores do formulário
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Verificar se já há usuários cadastrados
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Verificar se o usuário está cadastrado
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                // Login bem-sucedido
+                alert('Login bem-sucedido!');
+                // Redirecionar para login.html
+                window.location.href = "login.html";
+            } else {
+                // Login falhou
+                alert('Email ou senha incorretos. Por favor, tente novamente ou crie uma nova conta.');
+            }
+        });
+    </script>
+</body>
+</html>
